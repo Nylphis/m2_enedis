@@ -11,7 +11,7 @@ d'entraînement, taille du modèle sur l'échantillon et estimée sur le jeu com
 Lancement (depuis la racine, après `python run.py clean`) :
     python compare_models.py                  # 50 000 lignes
     python compare_models.py --lignes 20000   # plus rapide
-Sortie : reports/comparaison_modeles.csv
+Sortie : rapports/comparaison_modeles.csv
 """
 
 import argparse
@@ -30,7 +30,7 @@ from dpe.train import (categories_from, classification_metrics, clip_target,
                        make_model, regression_metrics)
 
 N_PLIS = 3
-SORTIE = ROOT / "reports" / "comparaison_modeles.csv"
+SORTIE = ROOT / "rapports" / "comparaison_modeles.csv"
 
 # (nom affiché, type de modèle, paramètres)
 CANDIDATS = {
@@ -107,7 +107,7 @@ def evaluer(task, estimator, params, ech, plis, categories) -> dict:
 
 
 def main(argv=None):
-    """Évalue tous les candidats et écrit reports/comparaison_modeles.csv."""
+    """Évalue tous les candidats et écrit rapports/comparaison_modeles.csv."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--lignes", type=int, default=50_000, help="taille de l'échantillon")
     args = parser.parse_args(argv)

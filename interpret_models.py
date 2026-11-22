@@ -1,7 +1,7 @@
 """Interprétation des modèles enregistrés, pour le rapport de ML.
 
 Jeu de test reconstitué à l'identique (même découpage par adresse que
-dpe/train.py). Sorties dans reports/ :
+dpe/train.py). Sorties dans rapports/ :
 - matrice_confusion.png et .csv : en % de chaque vraie classe (diagonale = rappel) ;
 - importance_variables.png et .csv : importance par permutation des 14
   variables, pour les deux modèles.
@@ -33,7 +33,7 @@ from dpe.train import classification_metrics, regression_metrics, split_par_adre
 matplotlib.use("Agg")  # fichiers images, sans fenêtre
 log = logging.getLogger(__name__)
 
-REPORTS = ROOT / "reports"
+REPORTS = ROOT / "rapports"
 N_REPETITIONS = 5  # mélanges par variable (moyenne et écart-type)
 
 NOMS = {
@@ -104,7 +104,7 @@ def importances(clf, reg, X, y_clf, y_reg) -> pd.DataFrame:
     -------
     DataFrame
         Index : variables ; colonnes : moyenne et écart-type par modèle.
-        Aussi écrit dans reports/importance_variables.csv.
+        Aussi écrit dans rapports/importance_variables.csv.
     """
     resultats = {}
     for cle, modele, y, score in [("classification", clf, y_clf, "f1_macro"),
@@ -138,7 +138,7 @@ def graphique_importances(table: pd.DataFrame) -> None:
 
 
 def main() -> None:
-    """Produit les quatre fichiers de reports/."""
+    """Produit les quatre fichiers de rapports/."""
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     REPORTS.mkdir(exist_ok=True)
     test = jeu_de_test()

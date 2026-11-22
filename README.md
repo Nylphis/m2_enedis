@@ -29,11 +29,11 @@ vues/                       # une page par fichier, éléments communs dans comm
 api/                        # API des modèles (FastAPI)
 dpe/                        # pipeline : config, fetch (API ADEME), clean, train, features
 run.py                      # lance le pipeline : python run.py [fetch] [clean] [train]
-compare_models.py           # comparaison des modèles candidats -> reports/
-interpret_models.py         # matrice de confusion et importance des variables -> reports/
+compare_models.py           # comparaison des modèles candidats -> rapports/
+interpret_models.py         # matrice de confusion et importance des variables -> rapports/
 data/processed/             # données nettoyées et statistiques
 models/                     # modèles entraînés (.joblib) et metadata.json
-reports/                    # résultats de la comparaison des modèles
+rapports/                   # rapport ML, documentations, résultats et figures
 .github/workflows/          # mise à jour mensuelle des données (GitHub Actions)
 Dockerfile                  # image de l'appli
 requirements.txt            # dépendances (Python 3.12)
