@@ -11,7 +11,7 @@ Dans le dossier `rapports/` :
 | Document | Contenu |
 |---|---|
 | [Documentation fonctionnelle](rapports/documentation_fonctionnelle.md) | Utilisation de l'appli, page par page, et de l'API |
-| [Documentation technique](rapports/documentation_technique.md) | Architecture ([schéma draw.io](rapports/architecture.drawio)), installation avec ou sans Docker, mise à jour des données, API |
+| [Documentation technique](rapports/documentation_technique.md) | Architecture dont schéma .drawio, installation avec ou sans Docker, mise à jour des données, API |
 | [Rapport de machine learning](rapports/rapport.md) | Données, prétraitement, comparaison des modèles, résultats et limites |
 
 ## Pages
